@@ -12,18 +12,19 @@ FORGET ABOUT SYNCHRONIZATION PRIMITIVES, MULTI-THREADING. PARALLELITY. => Use a 
 
 To get you a idea of what Neo4j is capable:
 
-CREATE 
-(s:Source  {url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3666300/"}),
-(a:Tag {name:"Acupuncture"}),
-(n:Tag {name:"Neuroscience"}),
-(u:Tag {name:"Article"}),
-(l:Lang {language:"EN"}),
-(i:Standard { name: "ISO 639-1 Code"}),
-(s)-[:TAGGED]->(a),
-(s)-[:TAGGED]->(n),
-(s)-[:TAGGED]->(u),
-(a)-[:LOCALIZED]->(l),(n)-[:LOCALIZED]->(l),(u)-[:LOCALIZED]->(l),
-(l)-[:STANDARDIZED]->(i)
+
+    CREATE 
+    (s:Source  {url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3666300/"}),
+    (a:Tag {name:"Acupuncture"}),
+    (n:Tag {name:"Neuroscience"}),
+    (u:Tag {name:"Article"}),
+    (l:Lang {language:"EN"}),
+    (i:Standard { name: "ISO 639-1 Code"}),
+    (s)-[:TAGGED]->(a),
+    (s)-[:TAGGED]->(n),
+    (s)-[:TAGGED]->(u),
+    (a)-[:LOCALIZED]->(l),(n)-[:LOCALIZED]->(l),(u)-[:LOCALIZED]->(l),
+    (l)-[:STANDARDIZED]->(i)
 
 I Just created some nodes, a Source link (aka a wikipedia reference), 3 tags, a language and a standard. Then I putted in relation all the nodes, it is clear that
 
